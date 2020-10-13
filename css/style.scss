@@ -1,0 +1,463 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;500;600;700&display=swap");
+
+@import "course";
+@import "portfolio";
+@import "about";
+@import "contact";
+
+$mobile:992px;
+
+@mixin mobile {
+    @media (max-width: #{$mobile}){
+        @content;
+    }
+}
+html,
+body {
+  color: #1f1f1f;
+  position: relative;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #f1f1f1;
+  
+  &:hover{
+    color: #f1f1f1;
+  }
+}
+p,ul li{
+  font-family: "Poppins", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Fahkwang", sans-serif;
+}
+
+section{
+  height: 100%;
+  width: 100%;
+}
+
+.a-para{
+  animation: a_para 1s ease-in-out;
+}
+@keyframes a_para {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0.8;
+  }
+}
+.animsition-overlay-slide{
+  background: #ffffff !important;
+}
+.main {
+  height: 100vh;
+  position: relative;
+}
+.hero {
+  position: relative;
+  background: #131313;
+  video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+}
+.nav-top {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  transition: .2s;
+  @include mobile{
+    display: none;
+  }
+  .logo {
+    img {
+      height: 50px;
+      width: 200px;
+    }
+  }
+  .nav-link {
+    padding: 0;
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        height: 60px;
+        .link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          padding: 0 20px;
+          color: #ffffff;
+          font-size: 12px;
+          text-transform: uppercase;
+          font-weight: 500;
+          letter-spacing: 1.8px;
+          transition: .2s;
+          opacity: .8;
+          &:hover{
+            opacity: 1;
+          }
+        }
+      }
+      #drobdown {
+        display: none;
+        height: 100%;
+        width: 200px;
+        position: absolute;
+        margin-top: 0;
+        animation: drobdown 0.2s ease-in;
+        @keyframes drobdown {
+          0% {
+            margin-top: 20px;
+          }
+        }
+        a {
+          background: #f1f1f1;
+          color: #131313;
+          padding: 15px 20px;
+          display: block;
+          font-size: 12px;
+          text-transform: uppercase;
+          font-weight: 500;
+          letter-spacing: 0.8px;
+          transition: 0.2s;
+          &:hover {
+            background: #e2e2e2;
+          }
+        }
+      }
+    }
+  }
+}
+.nav-mobile{
+  height: 80px;
+  width: 100%;
+  overflow-y: auto;
+  padding:10px 20px;
+  background: #1f1f1f;
+  position: fixed;
+  z-index: 5;
+  display: none;
+  @include mobile{
+    display: block;
+  }
+  .nav-mobile-bar{
+    height: 60px;
+  }
+  .logo{
+    img{
+      height: 30px;
+      width: 120px;
+    }
+    }
+    .hum{
+     img{
+       height: 30px;
+     }
+    }
+    .nav-mobile-link{
+      margin-top: 30px;
+      ul li{
+      list-style: none;
+      padding-top: 25px;
+      a{
+        font-size: 25px;
+      }
+      
+      #drobdown-mobile{
+        overflow-y: auto;
+        a{
+          display: block;
+          font-size: 20px;
+          padding: 15px 0 0 30px;
+          opacity: .8;
+        }
+      }
+    }
+  }
+}
+
+.bottom-box {
+  width: 80%;
+  height: 200px;
+  position: absolute;
+  bottom: 0;
+  background: #ffffff;
+  display: flex;
+  justify-content: flex-end;
+  animation: heroBox 0.8s;
+  animation-timing-function: ease;
+  @include mobile{
+    display: none;
+  }
+  @keyframes heroBox {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 80%;
+    }
+  }
+  .l-box {
+    width: 100%;
+    height: 100%;
+    padding: 50px 80px;
+  }
+  h3 {
+    color: #0078e9;
+    font-size: 22px;
+    // font-family: "Poppins", sans-serif;
+    line-height: 1.5em;
+    margin: 0;
+    padding-bottom: 18px;
+    text-transform: capitalize;
+    svg {
+      opacity: 0;
+      margin-left: 5px;
+      transition: 0.5s;
+    }
+  }
+  h5 {
+    color: #a5a5a5;
+    font-size: 15px;
+  }
+  p {
+    color: #131313;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5em;
+  }
+  a {
+    &:hover {
+      svg {
+        opacity: 1;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+.bottom-bar-link {
+  animation: barsweep .8s;
+  animation-timing-function: ease-in;
+  @keyframes barsweep {
+    0% {opacity: 0;margin-top: 50px;}
+    100% {opacity: 1;}
+  }
+}
+.bottom-bar-link-ii {
+  animation: barsweep_ii 1.2s;
+  animation-timing-function: ease-in;
+  @keyframes barsweep_ii {
+    0% {opacity: 0;margin-top: 50px;}
+    50%{opacity: 0;}
+    100% {opacity: 1;}
+  }
+}
+.bottom-bar-link-iii {
+  animation: barsweep_iii 1.8s;
+  animation-timing-function: ease-in;
+  @keyframes barsweep_iii {
+    0% {opacity: 0;margin-top: 50px;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+}
+.main-wraber {
+  height: 100%;
+  padding: 5%;
+  background: #ececec;
+  @include mobile{
+    padding-top: 50px;
+  }
+  h1 {
+    color: #0078e9;
+    font-size: 91px;
+    font-weight: 700;
+    letter-spacing: -4px;
+    @include mobile{
+      font-size: 40px;
+      letter-spacing: 0;
+    }
+  }
+  .design-impact {
+    .d-con {
+      width: 85%;
+      font-size: 18px;
+      line-height: 1.8em;
+      @include mobile{
+        width: 100%;
+      }
+    }
+  }
+  .short-services {
+    background: #ffffff;
+    padding: 20px;
+    position: relative;
+    @include mobile{
+      margin-bottom: 20px;
+    }
+    h5 {
+      opacity: 0.8;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 25px 0 5px 0;
+    }
+    p {
+      font-size: 16px;
+      opacity: 0.8;
+      line-height: 1.5em;
+      font-weight: 400;
+    }
+    a {
+      display: block;
+      color: #0078e9;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: right;
+      svg {
+        opacity: 0;
+        margin-left: -1em;
+        transition: 0.5s;
+      }
+      &:hover {
+        svg {
+          opacity: 1;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 5% 5% 0;
+  height: 400px;
+  background: #1f1f1f;
+  @include mobile{
+    height: 100%;
+    padding-bottom: 50px;
+  }
+  .footer-wrab {
+    height: 100%;
+    width: 100%;
+    display: block;
+    background: #1f1f1f;
+    color: #f1f1f1;
+    p{
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      opacity: .8;
+      text-decoration: none;
+    }
+    h4{
+      margin-top: 20px;
+      text-transform: uppercase;
+      @include mobile{
+        font-size: 15px;
+      }
+    }
+  }
+}
+.page_indi{
+  @include mobile{
+    display: none;
+  }
+}
+.progress-wrap {
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  display: block;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.progress-wrap svg path {
+  fill: none;
+}
+
+.progress-wrap svg.progress-circle path {
+  stroke: #000000;
+  stroke-width: 4;
+  box-sizing: border-box;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.cursor,
+.cursor2,
+.cursor3 {
+  position: fixed;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  left: -100px;
+  top: 50%;
+  -webkit-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+
+.cursor {
+  background-color: #fff;
+  z-index: 99999;
+  height: 0;
+  width: 0;
+}
+
+.cursor2,
+.cursor3 {
+  height: 46px;
+  width: 46px;
+  z-index: 99998;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.cursor2.hover,
+.cursor3.hover {
+  -webkit-transform: scale(1.4) translateX(-35%) translateY(-35%);
+  transform: scale(1.4) translateX(-35%) translateY(-35%);
+  border: none;
+}
+.cursor2.hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cursor2.hover .progress-wrap {
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0);
+}
+
+.cursor2.hover .progress-wrap svg.progress-circle path {
+  opacity: 0.4;
+}

@@ -1,0 +1,116 @@
+$mobile:992px;
+
+@mixin mobile {
+    @media (max-width: #{$mobile}){
+        @content;
+    }
+}
+.course {
+  background: #131313;
+  .size-box {
+    height: 20vh;
+    @include mobile{
+      height: 10vh;
+    }
+  }
+  h1 {
+    color: #fdfdfd;
+    line-height: 1.4em;
+  }
+}
+
+.course-wrab {
+  padding: 5%;
+  height: 100%;
+  background: #ececec;
+  @include mobile{
+    padding: 0%;
+    padding-top: 50px;
+    background: #ffffff;
+  }
+  .nav-container {
+    position: sticky;
+    top: 50px;
+   
+    .course-price{
+        height: 280px;
+        background: #0078e9;
+        color: #ffffff;
+        padding: 25px;
+        a{
+            display: block;
+            background: #ffffff;
+            width: 90%;
+            margin: 40px auto;
+            padding: 15px;
+            text-align: center;
+            color: #4e4e4e;
+            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: .2s;
+            &:hover{
+              width: 93%;
+              letter-spacing: 0;
+            }
+        }
+    }
+  }
+  .course-details {
+    height: 100%;
+    background: #ffffff;
+    padding: 50px;
+    @include mobile{
+      padding:50px 10px;
+    }
+    p {
+      font-size: 16px;
+      opacity: 0.8;
+      line-height: 1.8em;
+      font-weight: 400;
+    }
+    h2{
+      color:#0078e9;
+    }
+   
+    h5{
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color:#1b1b1b;
+        letter-spacing: 2px;
+        font-family: "Poppins", sans-serif;
+    }
+    .cariculum-wrab{
+        border: 1px solid #0078e9;
+        position: relative;
+        padding: 15px;
+        padding-bottom: 0;
+        h5{
+            position: absolute;
+            background: #ffffff;
+            top: -10px;
+            padding: 0 10px;
+        }
+        
+        ul{
+            li{
+                padding: 10px 0;
+                opacity: .8;
+            }
+        }
+    }
+    .schedule{
+      margin-top: 50px;
+        h2 span{
+            height: 5px;
+            width: 100%;
+            background: #131313;
+        }
+        h3{
+            font-size: 24px;
+        }
+    }
+  }
+}

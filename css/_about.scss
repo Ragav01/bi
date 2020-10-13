@@ -1,0 +1,145 @@
+$mobile:992px;
+
+@mixin mobile {
+    @media (max-width: #{$mobile}){
+        @content;
+    }
+}
+.about{
+    background: #131313;
+    .about-hero{
+      h1{
+        font-size: 75px;
+        font-family: "Fahkwang", sans-serif;
+        letter-spacing: 0px;
+        line-height: 1em;
+        color: #ffffff;
+        z-index: 5;
+        @include mobile{
+            font-size: 35px;
+            letter-spacing: 0px;
+        }
+      }
+      p{
+          color: #ffffff;
+          opacity: 0.8;
+          font-size: 22px;
+          padding-top: 20px;
+          animation: a_para 5s ease-in-out;
+      }
+      
+      @keyframes a_para {
+        0%{opacity: 0;}
+        20%{opacity: 0;}
+        40%{opacity: 0;}
+        60%{opacity: 0;}
+        80%{opacity: 0;}
+        100%{opacity: 0.8;}
+      }
+  }
+}
+.about-one{
+    padding: 5%;
+    h1{
+        position: sticky;
+        top: 80px;
+        font-size: 100px;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+        color: #0078e9;
+        @include mobile{
+            font-size: 80px;
+        }
+    }
+    h2{
+        color: #0078e9;
+    }
+    p{
+        font-size: 16px;
+        opacity: 0.8;
+        line-height: 1.8em;
+    }
+    h5{
+        margin-top: 40px;
+    }
+    ul{
+        padding-right: 50px;
+        li{
+            margin-top: 20px;
+        }
+    }
+    .one-border{
+        border-top: 5px solid #0078e9;
+    }
+    .container{
+        margin-bottom: 50px;
+    }
+    .about-sec{
+        display: flex;
+        @include mobile{
+            display: block;
+        }
+    }
+}
+
+.faq{
+    padding: 5%;
+    h1{
+        font-size: 68px;
+        font-weight: 800;
+        color: #0078e9;
+        @include mobile{
+            font-size: 40px;
+        }
+    }
+    hr{
+        opacity: 1;
+        height: 5px;
+        color: #0078e9;
+    }
+    details{
+        border-bottom: 2px solid;
+        margin-top: 20px;
+        summary{
+            outline: none;
+            padding: 20px 0;
+            font-size: 30px;
+            font-family: 'Fahkwang', sans-serif;
+            font-weight: 600;
+            position: relative;
+            @include mobile{
+                font-size: 20px;
+            }
+            &::-webkit-details-marker {
+                position: absolute;
+                top: 30px;
+                right: 0;
+                background: url('../image/plus.svg') center no-repeat;
+                color: transparent;
+                transition: .2s ease-in-out;
+            }
+        }
+    }
+    details[open] summary ~ * {
+        animation: sweep .3s ease-in-out;
+    }
+    details[open] summary::-webkit-details-marker {
+        background: url('../image/dash.svg') center no-repeat;
+        color: transparent;
+    }
+
+    .faq-inner{
+        padding: 30px;
+    }
+    @keyframes sweep {
+        from{
+            opacity: 0;
+            margin-top: -10px;
+        }
+        to{
+            opacity: 1;
+            margin-top: 0;
+        }
+    }
+}
